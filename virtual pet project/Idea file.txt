@@ -1,0 +1,5 @@
+﻿1. Try to figure out how to make variables for hunger, thirst, sleep
+2. make a timer that decreases stuff
+3. Once the thread is running and the variables are decreasing try to link it to shrinking the picture box.
+4. get the total playtime working 
+5. get the changing cat picture to work 

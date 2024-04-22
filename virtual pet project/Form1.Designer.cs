@@ -31,16 +31,22 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            pictureBox4 = new PictureBox();
+            foodButton = new Button();
+            thirstButton = new Button();
+            sleepButton = new Button();
+            CatPicture = new PictureBox();
             label1 = new Label();
             textBox1 = new TextBox();
+            sleepDecreaseBox = new PictureBox();
+            thirstDecreaseBox = new PictureBox();
+            foodDecreaseBox = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CatPicture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)sleepDecreaseBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)thirstDecreaseBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)foodDecreaseBox).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -72,42 +78,53 @@
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
-            // button1
+            // foodButton
             // 
-            button1.Location = new Point(99, 335);
-            button1.Margin = new Padding(3, 3, 45, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(203, 96);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            foodButton.BackColor = Color.Red;
+            foodButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            foodButton.ForeColor = SystemColors.ButtonFace;
+            foodButton.Location = new Point(99, 335);
+            foodButton.Margin = new Padding(3, 3, 45, 3);
+            foodButton.Name = "foodButton";
+            foodButton.Size = new Size(203, 96);
+            foodButton.TabIndex = 3;
+            foodButton.Text = "Food";
+            foodButton.UseVisualStyleBackColor = false;
+            foodButton.Click += foodButton_Click;
             // 
-            // button2
+            // thirstButton
             // 
-            button2.Location = new Point(350, 335);
-            button2.Name = "button2";
-            button2.Size = new Size(203, 96);
-            button2.TabIndex = 4;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            thirstButton.BackColor = Color.Blue;
+            thirstButton.FlatAppearance.BorderColor = Color.Black;
+            thirstButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            thirstButton.ForeColor = SystemColors.ButtonFace;
+            thirstButton.Location = new Point(350, 335);
+            thirstButton.Name = "thirstButton";
+            thirstButton.Size = new Size(203, 96);
+            thirstButton.TabIndex = 4;
+            thirstButton.Text = "Thirst";
+            thirstButton.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // sleepButton
             // 
-            button3.Location = new Point(602, 335);
-            button3.Margin = new Padding(46, 3, 3, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(203, 96);
-            button3.TabIndex = 5;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            sleepButton.BackColor = Color.Lime;
+            sleepButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            sleepButton.ForeColor = SystemColors.ControlText;
+            sleepButton.Location = new Point(602, 335);
+            sleepButton.Margin = new Padding(46, 3, 3, 3);
+            sleepButton.Name = "sleepButton";
+            sleepButton.Size = new Size(203, 96);
+            sleepButton.TabIndex = 5;
+            sleepButton.Text = "Sleep";
+            sleepButton.UseVisualStyleBackColor = false;
             // 
-            // pictureBox4
+            // CatPicture
             // 
-            pictureBox4.Location = new Point(99, 12);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(706, 300);
-            pictureBox4.TabIndex = 6;
-            pictureBox4.TabStop = false;
+            CatPicture.Location = new Point(99, 12);
+            CatPicture.Name = "CatPicture";
+            CatPicture.Size = new Size(706, 300);
+            CatPicture.TabIndex = 6;
+            CatPicture.TabStop = false;
             // 
             // label1
             // 
@@ -125,26 +142,60 @@
             textBox1.Size = new Size(53, 23);
             textBox1.TabIndex = 8;
             // 
+            // sleepDecreaseBox
+            // 
+            sleepDecreaseBox.BackColor = SystemColors.Desktop;
+            sleepDecreaseBox.Location = new Point(64, 12);
+            sleepDecreaseBox.Name = "sleepDecreaseBox";
+            sleepDecreaseBox.Size = new Size(20, 100);
+            sleepDecreaseBox.TabIndex = 9;
+            sleepDecreaseBox.TabStop = false;
+            // 
+            // thirstDecreaseBox
+            // 
+            thirstDecreaseBox.BackColor = SystemColors.Desktop;
+            thirstDecreaseBox.Location = new Point(38, 12);
+            thirstDecreaseBox.Name = "thirstDecreaseBox";
+            thirstDecreaseBox.Size = new Size(20, 300);
+            thirstDecreaseBox.TabIndex = 10;
+            thirstDecreaseBox.TabStop = false;
+            // 
+            // foodDecreaseBox
+            // 
+            foodDecreaseBox.BackColor = SystemColors.Desktop;
+            foodDecreaseBox.Location = new Point(12, 12);
+            foodDecreaseBox.Name = "foodDecreaseBox";
+            foodDecreaseBox.Size = new Size(20, 300);
+            foodDecreaseBox.TabIndex = 11;
+            foodDecreaseBox.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(896, 464);
+            Controls.Add(foodDecreaseBox);
+            Controls.Add(thirstDecreaseBox);
+            Controls.Add(sleepDecreaseBox);
             Controls.Add(textBox1);
             Controls.Add(label1);
-            Controls.Add(pictureBox4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(CatPicture);
+            Controls.Add(sleepButton);
+            Controls.Add(thirstButton);
+            Controls.Add(foodButton);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
+            Font = new Font("Segoe UI", 9F);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CatPicture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)sleepDecreaseBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)thirstDecreaseBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)foodDecreaseBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -154,11 +205,14 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private PictureBox pictureBox4;
+        private Button foodButton;
+        private Button thirstButton;
+        private Button sleepButton;
+        private PictureBox CatPicture;
         private Label label1;
         private TextBox textBox1;
+        private PictureBox sleepDecreaseBox;
+        private PictureBox thirstDecreaseBox;
+        private PictureBox foodDecreaseBox;
     }
 }
